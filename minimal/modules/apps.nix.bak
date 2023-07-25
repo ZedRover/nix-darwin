@@ -97,7 +97,6 @@
       "telnet"
       "xmake"
 
-      "aria2"
       ### END BREWS ###
     ];
 
