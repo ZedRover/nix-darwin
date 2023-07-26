@@ -50,6 +50,7 @@
     yadm
     zellij
 
+      exa
     ### END Nix ###
   ];
   environment.variables = {

@@ -51,6 +51,7 @@
     zellij
 
       exa
+      fzf
     ### END Nix ###
   ];
   environment.variables = {
