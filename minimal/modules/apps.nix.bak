@@ -50,7 +50,10 @@
     yadm
     zellij
 
-      exa
+    exa
+    fzf
+    cmake
+    helix
     ### END Nix ###
   ];
   environment.variables = {
@@ -83,7 +86,6 @@
       "bazel"
       "brew-cask-completion"
       "clang-format"
-      "cmake"
       "enca"
       "iperf3"
       "latexindent"
@@ -96,8 +98,6 @@
       "rust"
       "ta-lib"
       "telnet"
-      "xmake"
-
       "aria2"
       ### END BREWS ###
     ];

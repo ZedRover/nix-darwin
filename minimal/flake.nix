@@ -13,8 +13,6 @@
     experimental-features = [ "nix-command" "flakes" ];
 
     substituters = [
-      # Replace official cache with a mirror located in China
-      # Feel free to remove this line if you are not in China
       "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
     ];
@@ -28,6 +26,7 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+    # nur.url = "github:nix-community/NUR";
   };
 
   # The `outputs` function will return all the build results of the flake. 
@@ -39,6 +38,7 @@
     darwinConfigurations.zeds = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
+        # nur.nixosModules.nur
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/apps.nix
