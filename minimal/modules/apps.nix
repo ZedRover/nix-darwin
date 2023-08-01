@@ -57,6 +57,7 @@
     comma
       comma
       nix-du
+      fswatch
     ### END Nix ###
   ];
   environment.variables = {
@@ -102,6 +103,8 @@
       "ta-lib"
       "telnet"
       "aria2"
+      "gitwatch"
+      "coreutils"
       ### END BREWS ###
     ];
 
@@ -163,7 +166,6 @@
       "wechat"
       "wechattweak-cli"
       "wechatwork"
-      "xmind"
       "youku"
       "zoom"
       "zotero"
