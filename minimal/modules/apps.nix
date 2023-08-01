@@ -54,6 +54,9 @@
     fzf
     cmake
     helix
+    comma
+      comma
+      nix-du
     ### END Nix ###
   ];
   environment.variables = {
