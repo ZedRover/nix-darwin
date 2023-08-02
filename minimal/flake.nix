@@ -10,7 +10,7 @@
 
   # the nixConfig here only affects the flake itself, not the system configuration!
   nixConfig = {
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [ "nix-command" "flakes" ];
 
     substituters = [
       # "https://mirrors.cernet.edu.cn/nix-channels/store"
@@ -39,24 +39,24 @@
   # parameters in `outputs` are defined in `inputs` and can be referenced by their names.
   # However, `self` is an exception, this special parameter points to the `outputs` itself (self-reference)
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    darwin,
-    ...
-  }: {
-    darwinConfigurations.zeds = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [
-        # nur.nixosModules.nur
-        ./modules/nix-core.nix
-        ./modules/system.nix
-        ./modules/apps.nix
-        ./modules/host-users.nix
-      ];
-    };
+  outputs =
+    inputs @ { self
+    , nixpkgs
+    , darwin
+    , ...
+    }: {
+      darwinConfigurations.zeds = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          # nur.nixosModules.nur
+          ./modules/nix-core.nix
+          ./modules/system.nix
+          ./modules/apps.nix
+          ./modules/host-users.nix
+        ];
+      };
 
-    # nix codee formmater
-    formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
-  };
+      # nix codee formmater
+      formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
+    };
 }
