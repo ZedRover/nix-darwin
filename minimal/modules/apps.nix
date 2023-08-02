@@ -193,6 +193,7 @@
       "font-sf-mono-for-powerline"
 
       "font-intone-mono-nerd-font"
+      "telegram"
       ### END CASKs ###
     ];
   };
