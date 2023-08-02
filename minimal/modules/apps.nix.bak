@@ -107,7 +107,6 @@
       "gitwatch"
       "coreutils"
       "libpq"
-      "libpqxx"
       ### END BREWS ###
     ];
 

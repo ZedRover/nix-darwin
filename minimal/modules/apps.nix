@@ -106,7 +106,6 @@
       "aria2"
       "gitwatch"
       "coreutils"
-      "libpq"
       ### END BREWS ###
     ];
 
