@@ -104,6 +104,7 @@
       "telnet"
       "aria2"
       "gitwatch"
+      "coreutils"
       ### END BREWS ###
     ];
 
