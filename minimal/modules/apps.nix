@@ -155,7 +155,6 @@
       "snipaste"
       "sourcetree"
       "spotify"
-      "telegram-desktop"
       "tencent-lemon"
       "tencent-meeting"
       "termius"
