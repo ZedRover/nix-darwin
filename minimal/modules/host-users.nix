@@ -1,17 +1,14 @@
-{ ... } @ args:
-
+{...} @ args:
 #############################################################
 #
 #  Host & Users configuration
 #
 #############################################################
-
 let
   # TODO change this to your hostname & username
   name = "zeds";
   username = "zed";
-in
-{
+in {
   networking.hostName = name;
   networking.computerName = name;
   system.defaults.smb.NetBIOSName = name;

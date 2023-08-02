@@ -1,12 +1,11 @@
-{ pkgs, ... }: {
-
+{pkgs, ...}: {
   ##########################################################################
-  # 
+  #
   #  Install all apps and packages here.
   #
   #  NOTE: Your can find all available options in:
   #    https://daiderd.com/nix-darwin/manual/index.html
-  # 
+  #
   #
   ##########################################################################
 
@@ -43,7 +42,6 @@
     tldr
     tmux
 
-
     w3m
     wget
 
@@ -55,10 +53,10 @@
     cmake
     helix
     comma
-      comma
-      nix-du
-      fswatch
-      postgresql
+    comma
+    nix-du
+    fswatch
+    postgresql
     ### END Nix ###
   ];
   environment.variables = {
