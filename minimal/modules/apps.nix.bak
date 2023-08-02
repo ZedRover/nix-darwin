@@ -58,6 +58,7 @@
       comma
       nix-du
       fswatch
+      postgresql
     ### END Nix ###
   ];
   environment.variables = {
