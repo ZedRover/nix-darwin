@@ -57,6 +57,7 @@
     nix-du
     fswatch
     postgresql
+      wezterm
     ### END Nix ###
   ];
   environment.variables = {
