@@ -134,7 +134,6 @@
       "mactex-no-gui"
       "maczip"
       "miniforge"
-      "mochi-diffusion"
       "monitorcontrol"
       "mos"
       "motrix"
