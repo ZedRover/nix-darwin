@@ -194,6 +194,7 @@
       "font-intone-mono-nerd-font"
       "telegram"
       "hovrly"
+      "rewind"
       ### END CASKs ###
     ];
   };
