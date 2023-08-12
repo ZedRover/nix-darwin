@@ -193,7 +193,7 @@
       "font-intone-mono-nerd-font"
       "telegram"
       "rewind"
-      "webplotdigitaizer"
+      "webplotdigitizer"
       ### END CASKs ###
     ];
   };
