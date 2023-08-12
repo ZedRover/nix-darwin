@@ -104,7 +104,6 @@
       "aria2"
       "gitwatch"
       "coreutils"
-      "tailscale"
       ### END BREWS ###
     ];
 
@@ -194,6 +193,7 @@
       "font-intone-mono-nerd-font"
       "telegram"
       "rewind"
+      "tailscale"
       ### END CASKs ###
     ];
   };
