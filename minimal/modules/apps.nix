@@ -104,6 +104,7 @@
       "aria2"
       "gitwatch"
       "coreutils"
+      "tailscale"
       ### END BREWS ###
     ];
 
