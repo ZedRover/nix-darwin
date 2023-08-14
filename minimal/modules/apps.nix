@@ -118,7 +118,6 @@
       "bettertouchtool"
       "bose-updater"
       "cakebrew"
-      "cloudflare-warp"
       "deepl"
       "fliqlo"
       "free-download-manager"

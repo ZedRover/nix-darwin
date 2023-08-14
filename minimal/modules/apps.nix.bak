@@ -153,7 +153,6 @@
       "skim"
       "snipaste"
       "sourcetree"
-      "spotify"
       "tencent-lemon"
       "tencent-meeting"
       "termius"
