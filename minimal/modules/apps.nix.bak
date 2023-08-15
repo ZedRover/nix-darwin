@@ -144,7 +144,6 @@
       "qlmarkdown"
       "qlstephen"
       "qlvideo"
-      "qmk-toolbox"
       "qq"
       "qqmusic"
       "quicklook-json"
