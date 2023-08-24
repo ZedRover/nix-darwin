@@ -189,7 +189,6 @@
 
       "font-intone-mono-nerd-font"
       "telegram"
-      "rewind"
       ### END CASKs ###
     ];
   };
