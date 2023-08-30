@@ -190,6 +190,7 @@
 
       "font-intone-mono-nerd-font"
       "telegram"
+      "piphero"
       ### END CASKs ###
     ];
   };
