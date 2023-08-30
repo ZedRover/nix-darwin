@@ -190,6 +190,7 @@
 
       "font-intone-mono-nerd-font"
       "telegram"
+      "fig"
       ### END CASKs ###
     ];
   };
