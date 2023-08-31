@@ -164,6 +164,8 @@
       "youku"
       "zoom"
       "zotero"
+      "telegram"
+      "fig"
       ### Fonts ###
       "font-azeret-mono"
       "font-cascadia-code"
@@ -187,10 +189,8 @@
       "font-roboto-slab"
       "font-sf-mono"
       "font-sf-mono-for-powerline"
-
       "font-intone-mono-nerd-font"
-      "telegram"
-      "fig"
+
       ### END CASKs ###
     ];
   };
