@@ -192,6 +192,7 @@
       "font-intone-mono-nerd-font"
 
       "namebenchb"
+      "namebench"
       ### END CASKs ###
     ];
   };
