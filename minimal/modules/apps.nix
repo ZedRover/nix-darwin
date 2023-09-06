@@ -105,7 +105,6 @@
       "gitwatch"
       "coreutils"
       "wtfis"
-      "namebench"
       ### END BREWS ###
     ];
 
@@ -192,6 +191,8 @@
       "font-sf-mono-for-powerline"
       "font-intone-mono-nerd-font"
 
+      "namebenchb"
+      "namebench"
       ### END CASKs ###
     ];
   };
