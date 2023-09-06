@@ -105,6 +105,7 @@
       "gitwatch"
       "coreutils"
       "wtfis"
+      "namebench"
       ### END BREWS ###
     ];
 
