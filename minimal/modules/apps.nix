@@ -114,7 +114,6 @@
       "baidunetdisk"
       "balenaetcher"
       "bartender"
-      "betterdisplay"
       "betterdummy"
       "bettertouchtool"
       "bose-updater"
