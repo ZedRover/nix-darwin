@@ -165,7 +165,6 @@
       "zoom"
       "zotero"
       "telegram"
-      "fig"
       ### Fonts ###
       "font-azeret-mono"
       "font-cascadia-code"
