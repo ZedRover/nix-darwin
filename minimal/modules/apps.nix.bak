@@ -189,6 +189,7 @@
       "font-sf-mono-for-powerline"
       "font-intone-mono-nerd-font"
 
+      "shottr"
       ### END CASKs ###
     ];
   };

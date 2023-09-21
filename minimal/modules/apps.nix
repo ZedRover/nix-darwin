@@ -190,6 +190,7 @@
       "font-intone-mono-nerd-font"
 
       "shottr"
+      "trunk-io"
       ### END CASKs ###
     ];
   };
