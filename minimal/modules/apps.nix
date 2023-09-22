@@ -105,6 +105,7 @@
       "gitwatch"
       "coreutils"
       "wtfis"
+      "stats"
       ### END BREWS ###
     ];
 
