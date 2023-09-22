@@ -82,6 +82,7 @@
       "homebrew/bundle"
       "homebrew/command-not-found"
       "sunnyyoung/repo"
+      "buo/cask-upgrade"
     ];
 
     # `brew install`
