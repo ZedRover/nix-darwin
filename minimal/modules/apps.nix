@@ -135,7 +135,6 @@
       "miniforge"
       "monitorcontrol"
       "mos"
-      "motrix"
       "neteasemusic"
       "notion"
       "onedrive"

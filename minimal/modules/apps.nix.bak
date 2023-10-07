@@ -192,6 +192,7 @@
 
       "shottr"
       "trunk-io"
+      "rustdesk"
       ### END CASKs ###
     ];
   };
