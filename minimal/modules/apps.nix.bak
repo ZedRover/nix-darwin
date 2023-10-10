@@ -135,7 +135,6 @@
       "miniforge"
       "monitorcontrol"
       "mos"
-      "motrix"
       "neteasemusic"
       "notion"
       "onedrive"
@@ -165,6 +164,9 @@
       "zoom"
       "zotero"
       "telegram"
+      "shottr"
+      "trunk-io"
+      "rustdesk"
       ### Fonts ###
       "font-azeret-mono"
       "font-cascadia-code"
@@ -190,9 +192,7 @@
       "font-sf-mono-for-powerline"
       "font-intone-mono-nerd-font"
 
-      "shottr"
-      "trunk-io"
-      "rustdesk"
+
       ### END CASKs ###
     ];
   };
