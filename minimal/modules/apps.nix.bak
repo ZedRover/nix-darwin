@@ -193,6 +193,7 @@
       "font-intone-mono-nerd-font"
 
 
+      "pictureview"
       ### END CASKs ###
     ];
   };
