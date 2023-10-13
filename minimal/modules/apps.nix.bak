@@ -194,6 +194,7 @@
 
 
       "pictureview"
+      "kuaitie"
       ### END CASKs ###
     ];
   };
