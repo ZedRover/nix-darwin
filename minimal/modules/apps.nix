@@ -196,6 +196,7 @@
       "pictureview"
       "kuaitie"
       "spacedrive"
+      "stats"
       ### END CASKs ###
     ];
   };
