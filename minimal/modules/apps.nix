@@ -198,6 +198,7 @@
       "kuaitie"
       "spacedrive"
       "arc"
+      "microsoft-word"
       ### END CASKs ###
     ];
   };

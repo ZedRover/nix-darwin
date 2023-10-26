@@ -106,6 +106,7 @@
       "gitwatch"
       "coreutils"
       "wtfis"
+      "macos-trash"
       ### END BREWS ###
     ];
 
