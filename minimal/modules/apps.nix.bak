@@ -199,6 +199,7 @@
       "spacedrive"
       "arc"
       "microsoft-word"
+      "microsoft-excel"
       ### END CASKs ###
     ];
   };
