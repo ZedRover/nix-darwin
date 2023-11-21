@@ -202,6 +202,7 @@
       "microsoft-excel"
       "omnidisksweeper"
       "microsoft-powerpoint"
+      "microsoft-teams"
       ### END CASKs ###
     ];
   };
