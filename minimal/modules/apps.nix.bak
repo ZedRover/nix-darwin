@@ -200,6 +200,7 @@
       "arc"
       "microsoft-word"
       "microsoft-excel"
+      "omnidisksweeper"
       ### END CASKs ###
     ];
   };
