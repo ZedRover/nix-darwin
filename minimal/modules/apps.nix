@@ -203,6 +203,7 @@
       "omnidisksweeper"
       "microsoft-powerpoint"
       "microsoft-teams"
+      "marginnote"
       ### END CASKs ###
     ];
   };
