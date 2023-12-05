@@ -204,6 +204,7 @@
       "microsoft-powerpoint"
       "microsoft-teams"
       "marginnote"
+      "marktext"
       ### END CASKs ###
     ];
   };
