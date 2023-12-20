@@ -168,7 +168,6 @@
       "shottr"
       "trunk-io"
       "rustdesk"
-      "koodo-reader"
       ### Fonts ###
       "font-azeret-mono"
       "font-cascadia-code"
