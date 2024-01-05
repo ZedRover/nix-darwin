@@ -206,6 +206,7 @@
       "microsoft-teams"
       "marginnote"
       "sfm"
+      "xpipe"
       ### END CASKs ###
     ];
   };
