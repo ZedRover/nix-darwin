@@ -83,7 +83,6 @@
       "homebrew/command-not-found"
       "sunnyyoung/repo"
       "buo/cask-upgrade"
-      "xpipe-io/tap"
     ];
 
     # `brew install`
@@ -206,7 +205,6 @@
       "microsoft-teams"
       "marginnote"
       "sfm"
-      "xpipe"
       ### END CASKs ###
     ];
   };
