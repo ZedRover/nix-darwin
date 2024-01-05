@@ -204,6 +204,7 @@
       "microsoft-powerpoint"
       "microsoft-teams"
       "marginnote"
+      "sfm"
       ### END CASKs ###
     ];
   };
