@@ -107,7 +107,6 @@
       "coreutils"
       "wtfis"
       "macos-trash"
-      "hugo"
       ### END BREWS ###
     ];
 
