@@ -205,6 +205,7 @@
       "microsoft-teams"
       "marginnote"
       "sfm"
+      "prettyclean"
       ### END CASKs ###
     ];
   };
