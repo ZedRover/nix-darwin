@@ -106,6 +106,7 @@
       "coreutils"
       "wtfis"
       "macos-trash"
+      "fnm"
       ### END BREWS ###
     ];
 
