@@ -98,7 +98,6 @@
       "macvim"
       "ncdu"
       "neofetch"
-      "node"
       "rust"
       "ta-lib"
       "telnet"
