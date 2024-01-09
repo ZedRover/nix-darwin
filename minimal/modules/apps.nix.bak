@@ -98,7 +98,6 @@
       "macvim"
       "ncdu"
       "neofetch"
-      "node"
       "rust"
       "ta-lib"
       "telnet"
@@ -205,6 +204,7 @@
       "microsoft-teams"
       "marginnote"
       "sfm"
+      "prettyclean"
       ### END CASKs ###
     ];
   };
