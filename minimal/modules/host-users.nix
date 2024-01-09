@@ -6,7 +6,7 @@
 #############################################################
 let
   # TODO change this to your hostname & username
-  name = "zeds";
+  name = "zeds-mac";
   username = "zed";
 in
 {
