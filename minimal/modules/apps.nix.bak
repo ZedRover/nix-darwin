@@ -206,6 +206,7 @@
       "marginnote"
       "sfm"
       "prettyclean"
+      "lulu"
       ### END CASKs ###
     ];
   };

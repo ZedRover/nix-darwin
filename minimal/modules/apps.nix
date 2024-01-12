@@ -107,6 +107,7 @@
       "wtfis"
       "macos-trash"
       "fnm"
+      "knqyf263/pet/pet"
       ### END BREWS ###
     ];
 
