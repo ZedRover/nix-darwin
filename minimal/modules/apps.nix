@@ -57,6 +57,7 @@
     nix-du
     fswatch
     postgresql
+    pet
     ### END Nix ###
   ];
   environment.variables = {
@@ -107,7 +108,6 @@
       "wtfis"
       "macos-trash"
       "fnm"
-      "knqyf263/pet/pet"
       ### END BREWS ###
     ];
 
