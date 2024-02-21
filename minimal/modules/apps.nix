@@ -118,7 +118,6 @@
       "baidunetdisk"
       "balenaetcher"
       "bartender"
-      "betterdummy"
       "bettertouchtool"
       "bose-updater"
       "cakebrew"
