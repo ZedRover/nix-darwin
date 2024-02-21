@@ -108,6 +108,7 @@
       "wtfis"
       "macos-trash"
       "fnm"
+      "trzsz-ssh"
       ### END BREWS ###
     ];
 
@@ -208,6 +209,9 @@
       "sfm"
       "prettyclean"
       "lulu"
+      "itsycal"
+      "easydict"
+      "obsidian"
       ### END CASKs ###
     ];
   };
