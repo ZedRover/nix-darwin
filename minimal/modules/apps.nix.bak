@@ -28,7 +28,6 @@
     inetutils
 
     mold
-    mosh
 
     nixpkgs-fmt
     ninja
@@ -109,6 +108,7 @@
       "macos-trash"
       "fnm"
       "trzsz-ssh"
+      "asitop"
       ### END BREWS ###
     ];
 
@@ -118,7 +118,6 @@
       "baidunetdisk"
       "balenaetcher"
       "bartender"
-      "betterdummy"
       "bettertouchtool"
       "bose-updater"
       "cakebrew"
@@ -137,7 +136,6 @@
       "maczip"
       "miniforge"
       "monitorcontrol"
-      "mos"
       "neteasemusic"
       "notion"
       "onedrive"
@@ -157,7 +155,6 @@
       "tencent-lemon"
       "tencent-meeting"
       "termius"
-      "uninstallpkg"
       "visual-studio-code"
       "vnc-viewer"
       "wechat"
@@ -211,6 +208,12 @@
       "lulu"
       "itsycal"
       "easydict"
+      "obsidian"
+      "latest"
+      "wetype"
+      "1password"
+      "1password-cli"
+      "mac-mouse-fix"
       ### END CASKs ###
     ];
   };

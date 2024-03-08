@@ -19,45 +19,35 @@
     axel
     bat
     bazel
-
-    gh
+    cmake
+    comma
+    comma
+    exa
+    fswatch
+    fzf
     git
     git-lfs
-
+    helix
     htop-vim
     inetutils
-
     mold
-    mosh
-
-    nixpkgs-fmt
     ninja
-
+    nix-du
+    nixpkgs-fmt
     openssh
     pandoc
     parallel
+    pet
+    postgresql
     procs
     pstree
     smartmontools
     tldr
     tmux
-
     w3m
     wget
-
     yadm
     zellij
-
-    exa
-    fzf
-    cmake
-    helix
-    comma
-    comma
-    nix-du
-    fswatch
-    postgresql
-    pet
     ### END Nix ###
   ];
   environment.variables = {
@@ -76,39 +66,42 @@
     };
 
     taps = [
-      "homebrew/cask-fonts"
-      "homebrew/services"
-      "homebrew/cask-versions"
       "beeftornado/rmtree"
-      "homebrew/bundle"
-      "homebrew/command-not-found"
-      "sunnyyoung/repo"
       "buo/cask-upgrade"
+      "homebrew/bundle"
+      "homebrew/cask-fonts"
+      "homebrew/cask-versions"
+      "homebrew/command-not-found"
+      "homebrew/services"
+      "sunnyyoung/repo"
     ];
 
     # `brew install`
     brews = [
+      "aria2"
+      "asitop"
       "bazel"
       "brew-cask-completion"
       "clang-format"
+      "coreutils"
       "enca"
+      "fnm"
+      "gh"
+      "gitwatch"
       "iperf3"
       "latexindent"
       "libomp"
       "maclaunch"
+      "macos-trash"
       "macvim"
+      "mosh"
       "ncdu"
       "neofetch"
       "rust"
       "ta-lib"
       "telnet"
-      "aria2"
-      "gitwatch"
-      "coreutils"
-      "wtfis"
-      "macos-trash"
-      "fnm"
       "trzsz-ssh"
+      "wtfis"
       ### END BREWS ###
     ];
 
@@ -136,7 +129,6 @@
       "maczip"
       "miniforge"
       "monitorcontrol"
-      "mos"
       "neteasemusic"
       "notion"
       "onedrive"
@@ -156,7 +148,6 @@
       "tencent-lemon"
       "tencent-meeting"
       "termius"
-      "uninstallpkg"
       "visual-studio-code"
       "vnc-viewer"
       "wechat"
@@ -211,6 +202,11 @@
       "itsycal"
       "easydict"
       "obsidian"
+      "latest"
+      "wetype"
+      "1password"
+      "1password-cli"
+      "mac-mouse-fix"
       ### END CASKs ###
     ];
   };
