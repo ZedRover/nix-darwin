@@ -74,6 +74,7 @@
       "homebrew/command-not-found"
       "homebrew/services"
       "sunnyyoung/repo"
+      "mrkai77/cask"
     ];
 
     # `brew install`
@@ -101,7 +102,9 @@
       "ta-lib"
       "telnet"
       "trzsz-ssh"
-      "wtfis"
+      "open-mpi"
+      "netcat"
+      "iproute2mac"
       ### END BREWS ###
     ];
 
@@ -113,8 +116,6 @@
       "bartender"
       "bettertouchtool"
       "bose-updater"
-      "cakebrew"
-      "deepl"
       "fliqlo"
       "free-download-manager"
       "hyper"
@@ -128,7 +129,6 @@
       "mactex-no-gui"
       "maczip"
       "miniforge"
-      "monitorcontrol"
       "neteasemusic"
       "notion"
       "onedrive"
@@ -144,7 +144,6 @@
       "quicklookase"
       "skim"
       "snipaste"
-      "sourcetree"
       "tencent-lemon"
       "tencent-meeting"
       "termius"
@@ -184,7 +183,7 @@
       "font-sf-mono"
       "font-sf-mono-for-powerline"
       "font-intone-mono-nerd-font"
-
+      "font-lxgw-wenkai"
 
       "pictureview"
       "kuaitie"
@@ -207,6 +206,13 @@
       "1password"
       "1password-cli"
       "mac-mouse-fix"
+      "amazon-q"
+      "loop"
+      "tailscale"
+      "logseq"
+      "font-0xproto"
+      "font-cascadia-code-nf"
+      "font-cascadia-mono-nf"
       ### END CASKs ###
     ];
   };
