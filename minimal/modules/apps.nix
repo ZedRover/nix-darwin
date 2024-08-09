@@ -69,7 +69,7 @@
       "beeftornado/rmtree"
       "buo/cask-upgrade"
       "homebrew/bundle"
-      "homebrew/cask-fonts"
+      # "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "homebrew/command-not-found"
       "homebrew/services"
@@ -121,7 +121,6 @@
       "hyper"
       "ieasemusic"
       "iina"
-      "imazing"
       "input-source-pro"
       "ipynb-quicklook"
       "julia"
@@ -154,7 +153,7 @@
       "wechatwork"
       "youku"
       "zoom"
-      "zotero"
+      "zotero@beta"
       "telegram"
       "shottr"
       "trunk-io"
@@ -213,6 +212,11 @@
       "font-0xproto"
       "font-cascadia-code-nf"
       "font-cascadia-mono-nf"
+      "chatgpt"
+      "motrix"
+      "sublime-text"
+      "notchnook"
+      "douyin"
       ### END CASKs ###
     ];
   };
