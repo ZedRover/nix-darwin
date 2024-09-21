@@ -13,14 +13,12 @@
   #
   # The packages installed here are available to all users, and are reproducible across machines, and are rollbackable.
   # But on macOS, it's less stable than homebrew.
-  #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
     axel
     bat
     bazel
     cmake
-    comma
     comma
     exa
     fswatch
@@ -51,11 +49,11 @@
     ### END Nix ###
   ];
   environment.variables = {
-    HOMEBREW_API_DOMAIN = "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api";
-    HOMEBREW_BOTTLE_DOMAIN = "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles";
-    HOMEBREW_BREW_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git";
-    HOMEBREW_CORE_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git";
-    HOMEBREW_PIP_INDEX_URL = "https://pypi.tuna.tsinghua.edu.cn/simple";
+    # HOMEBREW_API_DOMAIN = "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api";
+    # HOMEBREW_BOTTLE_DOMAIN = "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles";
+    # HOMEBREW_BREW_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git";
+    # HOMEBREW_CORE_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git";
+    # HOMEBREW_PIP_INDEX_URL = "https://pypi.tuna.tsinghua.edu.cn/simple";
   };
   homebrew = {
     enable = true;
@@ -69,7 +67,6 @@
       "beeftornado/rmtree"
       "buo/cask-upgrade"
       "homebrew/bundle"
-      # "homebrew/cask-fonts"
       "homebrew/cask-versions"
       "homebrew/command-not-found"
       "homebrew/services"
@@ -155,7 +152,6 @@
       "zoom"
       "zotero@beta"
       "telegram"
-      "shottr"
       "trunk-io"
       "rustdesk"
       ### Fonts ###
@@ -183,6 +179,9 @@
       "font-sf-mono-for-powerline"
       "font-intone-mono-nerd-font"
       "font-lxgw-wenkai"
+      "font-0xproto"
+      "font-cascadia-code-nf"
+      "font-cascadia-mono-nf"
 
       "pictureview"
       "kuaitie"
@@ -194,9 +193,7 @@
       "microsoft-powerpoint"
       "microsoft-teams"
       "marginnote"
-      "sfm"
       "prettyclean"
-      "lulu"
       "itsycal"
       "easydict"
       "obsidian"
@@ -208,14 +205,10 @@
       "amazon-q"
       "loop"
       "tailscale"
-      "logseq"
-      "font-0xproto"
-      "font-cascadia-code-nf"
-      "font-cascadia-mono-nf"
-      "chatgpt"
       "motrix"
       "sublime-text"
       "notchnook"
+      "kodi"
       ### END CASKs ###
     ];
   };
