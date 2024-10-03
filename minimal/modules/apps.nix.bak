@@ -209,6 +209,7 @@
       "sublime-text"
       "notchnook"
       "kodi"
+      "betterdisplay"
       ### END CASKs ###
     ];
   };
