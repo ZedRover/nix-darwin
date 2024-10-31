@@ -102,6 +102,7 @@
       "open-mpi"
       "netcat"
       "iproute2mac"
+      "duf"
       ### END BREWS ###
     ];
 

@@ -185,7 +185,6 @@
       "font-cascadia-mono-nf"
 
       "pictureview"
-      "kuaitie"
       "spacedrive"
       "arc"
       "microsoft-word"
