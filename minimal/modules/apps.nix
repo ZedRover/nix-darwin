@@ -185,7 +185,6 @@
       "font-cascadia-mono-nf"
 
       "pictureview"
-      "spacedrive"
       "arc"
       "microsoft-word"
       "microsoft-excel"
@@ -202,13 +201,10 @@
       "1password"
       "1password-cli"
       "mac-mouse-fix"
-      "amazon-q"
       "loop"
       "tailscale"
-      "motrix"
       "sublime-text"
       "notchnook"
-      "kodi"
       "betterdisplay"
       ### END CASKs ###
     ];
