@@ -206,6 +206,7 @@
       "sublime-text"
       "notchnook"
       "betterdisplay"
+      "chatgpt"
       ### END CASKs ###
     ];
   };

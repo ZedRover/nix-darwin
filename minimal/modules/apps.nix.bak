@@ -206,7 +206,6 @@
       "sublime-text"
       "notchnook"
       "betterdisplay"
-      "uninstallpkg"
       ### END CASKs ###
     ];
   };
