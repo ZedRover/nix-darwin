@@ -78,7 +78,6 @@
     brews = [
       "aria2"
       "asitop"
-      "bazel"
       "brew-cask-completion"
       "clang-format"
       "coreutils"
@@ -206,6 +205,8 @@
       "sublime-text"
       "notchnook"
       "betterdisplay"
+      "chatgpt"
+      "zed"
       ### END CASKs ###
     ];
   };
