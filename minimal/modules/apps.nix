@@ -206,7 +206,6 @@
       "notchnook"
       "betterdisplay"
       "chatgpt"
-      "zed"
       "corretto"
       ### END CASKs ###
     ];
