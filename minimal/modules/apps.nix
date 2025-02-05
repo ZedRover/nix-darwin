@@ -202,11 +202,11 @@
       "mac-mouse-fix"
       "loop"
       "tailscale"
-      "sublime-text"
       "notchnook"
       "betterdisplay"
       "chatgpt"
-      "corretto"
+      "temurin@21"
+      "cursor"
       ### END CASKs ###
     ];
   };

@@ -12,15 +12,15 @@
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
 
-    substituters = [
-      # "https://mirrors.cernet.edu.cn/nix-channels/store"
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      "https://cache.nixos.org"
-    ];
-    trusted-substituters = [
-      "https://mirrors.cernet.edu.cn/nix-channels/store"
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-    ];
+    # substituters = [
+    #   # "https://mirrors.cernet.edu.cn/nix-channels/store"
+    #   "https://mirror.sjtu.edu.cn/nix-channels/store"
+    #   "https://cache.nixos.org"
+    # ];
+    # trusted-substituters = [
+    #   "https://mirrors.cernet.edu.cn/nix-channels/store"
+    #   "https://mirror.sjtu.edu.cn/nix-channels/store"
+    # ];
   };
 
   # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
