@@ -207,6 +207,7 @@
       "chatgpt"
       "temurin@21"
       "cursor"
+      "rstudio"
       ### END CASKs ###
     ];
   };

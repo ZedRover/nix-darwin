@@ -206,6 +206,7 @@
       "betterdisplay"
       "chatgpt"
       "temurin@21"
+      "cursor"
       ### END CASKs ###
     ];
   };

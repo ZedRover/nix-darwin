@@ -6,5 +6,5 @@
   nix.package = pkgs.nix;
   programs.nix-index.enable = true;
   nixpkgs.config.allowUnfree = true;
-  nix.settings.trusted-substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
+  # nix.settings.trusted-substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
 }
