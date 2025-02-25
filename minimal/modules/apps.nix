@@ -199,7 +199,6 @@
       "wetype"
       "1password"
       "1password-cli"
-      "mac-mouse-fix"
       "loop"
       "tailscale"
       "notchnook"
@@ -208,6 +207,7 @@
       "temurin@21"
       "cursor"
       "cherry-studio"
+      "mos"
       ### END CASKs ###
     ];
   };
