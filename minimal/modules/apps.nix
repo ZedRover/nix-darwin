@@ -48,6 +48,7 @@
     zellij
     ### END Nix ###
   ];
+  
   environment.variables = {
     # HOMEBREW_API_DOMAIN = "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api";
     # HOMEBREW_BOTTLE_DOMAIN = "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles";
@@ -208,6 +209,7 @@
       "cursor"
       "cherry-studio"
       "mos"
+      "xquartz"
       ### END CASKs ###
     ];
   };

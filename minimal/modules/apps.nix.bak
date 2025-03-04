@@ -207,6 +207,7 @@
       "temurin@21"
       "cursor"
       "cherry-studio"
+      "mos"
       ### END CASKs ###
     ];
   };
