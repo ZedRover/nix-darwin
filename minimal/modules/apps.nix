@@ -20,7 +20,7 @@
     bazel
     cmake
     comma
-    exa
+    eza
     fswatch
     fzf
     git

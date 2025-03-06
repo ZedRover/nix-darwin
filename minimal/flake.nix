@@ -26,9 +26,9 @@
   # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
   # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-23.05-darwin";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
     darwin = {
-      url = "github:lnl7/nix-darwin";
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
     # nur.url = "github:nix-community/NUR";
@@ -58,5 +58,6 @@
 
       # nix codee formmater
       formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
+
     };
 }
