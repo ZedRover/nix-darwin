@@ -15,7 +15,7 @@
       # so we do not need to logout and login again to make the changes take effect.
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
     '';
-    stateVersion = 4;
+    stateVersion = 5;
 
     defaults = {
       menuExtraClock.Show24Hour = true; # show 24 hour clock
