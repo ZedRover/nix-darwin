@@ -177,6 +177,7 @@
       "cursor"
       "cherry-studio"
       "mos"
+      "parallels-client"
       ### END CASKs ###
 
       ### Fonts ###
