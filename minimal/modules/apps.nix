@@ -72,7 +72,7 @@
       "homebrew/command-not-found"
       "homebrew/services"
       "sunnyyoung/repo"
-      "mrkai77/cask"
+      # "mrkai77/cask"
     ];
 
     # `brew install`
@@ -104,6 +104,7 @@
       "netcat"
       "iproute2mac"
       "duf"
+      "juliaup"
       ### END BREWS ###
     ];
 
@@ -119,11 +120,9 @@
       "fliqlo"
       "free-download-manager"
       "hyper"
-      "ieasemusic"
       "iina"
       "input-source-pro"
       "ipynb-quicklook"
-      "julia"
       "linearmouse"
       "mactex-no-gui"
       "maczip"
@@ -172,7 +171,6 @@
       "wetype"
       "1password"
       "1password-cli"
-      "loop"
       "tailscale"
       "notchnook"
       "betterdisplay"
@@ -182,6 +180,7 @@
       "cherry-studio"
       "mos"
       "parallels-client"
+      "xquartz"
       ### END CASKS ###
 
       ### START FONTS ###
