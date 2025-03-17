@@ -181,6 +181,7 @@
       "mos"
       "parallels-client"
       "xquartz"
+      "adobe-acrobat-reader"
       ### END CASKS ###
 
       ### START FONTS ###
@@ -211,6 +212,10 @@
       "font-0xproto"
       "font-cascadia-code-nf"
       "font-cascadia-mono-nf"
+      "font-maple-mono"
+      "font-maple-mono-nf"
+      "font-maple-mono-cn"
+      "font-maple-mono-nf-cn"
       ### END FONTS ###
     ];
   };

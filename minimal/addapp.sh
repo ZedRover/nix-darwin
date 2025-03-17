@@ -35,6 +35,43 @@ add_to_list() {
   sort_list "$list_name"
 }
 
+# 删除指定的软件
+delete_from_list() {
+  local app=$1
+  local removed=0
+
+  # 处理 `brews`、`casks` 和 `fonts`
+  for list_name in "brews" "casks" "fonts"; do
+    local list_start="### START $(echo "$list_name" | tr '[:lower:]' '[:upper:]') ###"
+    local list_end="### END $(echo "$list_name" | tr '[:lower:]' '[:upper:]') ###"
+
+    # 删除匹配的软件
+    awk -v start="$list_start" -v end="$list_end" -v app="\"$app\"" '
+      $0 ~ start {found=1}
+      found && $0 == app {removed=1; next}
+      found && $0 ~ end {found=0}
+      {print}
+    ' "$CONFIG_FILE" > tmp_config.nix && mv tmp_config.nix "$CONFIG_FILE"
+
+    # 检查是否有删除操作
+    if grep -q "\"$app\"" "$CONFIG_FILE"; then
+      continue
+    else
+      removed=1
+    fi
+  done
+
+  if [[ $removed -eq 1 ]]; then
+    echo "$app 已从列表中删除！"
+    # 重新排序并格式化
+    for list_name in "brews" "casks" "fonts"; do
+      sort_list "$list_name"
+    done
+  else
+    echo "$app 不在任何列表中！"
+  fi
+}
+
 # 排序指定的列表
 sort_list() {
   local list_name=$1
@@ -76,7 +113,17 @@ case "$1" in
       echo "请提供要添加的软件名！"
     fi
     ;;
+  del)
+    if [[ -n "$2" ]]; then
+      delete_from_list "$2"
+    else
+      echo "请提供要删除的软件名！"
+    fi
+    ;;
   *)
-    echo "无效的操作。使用： ./addapp.sh c|b|f 软件名"
+    echo "无效的操作。使用："
+    echo "  添加软件: ./addapp.sh c|b|f 软件名"
+    echo "  删除软件: ./addapp.sh del 软件名"
     ;;
 esac
+
