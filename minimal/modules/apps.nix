@@ -105,6 +105,7 @@
       "iproute2mac"
       "duf"
       "juliaup"
+      "ffmpeg"
       ### END BREWS ###
     ];
 
@@ -182,6 +183,7 @@
       "parallels-client"
       "xquartz"
       "adobe-acrobat-reader"
+      "downie"
       ### END CASKS ###
 
       ### START FONTS ###
