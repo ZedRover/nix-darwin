@@ -117,7 +117,6 @@
       "balenaetcher"
       "bartender"
       "bettertouchtool"
-      "bose-updater"
       "fliqlo"
       "free-download-manager"
       "hyper"
