@@ -106,6 +106,7 @@
       "duf"
       "juliaup"
       "ffmpeg"
+      "hyperfine"
       ### END BREWS ###
     ];
 
@@ -156,7 +157,6 @@
       "trunk-io"
       "rustdesk"
       "pictureview"
-      "arc"
       "microsoft-word"
       "microsoft-excel"
       "omnidisksweeper"
@@ -177,10 +177,10 @@
       "chatgpt"
       "temurin@21"
       "cursor"
-      "cherry-studio"
       "mos"
       "parallels-client"
-      "xquartz"
+      "claude"
+      "tailscale-app"
       ### END CASKS ###
 
       ### START FONTS ###
