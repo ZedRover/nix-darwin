@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import re
+import subprocess
+
+CONFIG_FILE = os.path.expanduser("~/tools/nix-world/nix-darwin-kickstarter/minimal/modules/apps.nix")
+
+LISTS = {
+    "b": "brews",
+    "c": "casks",
+    "f": "fonts",
+}
+
+START_TAG = "### START {section} ###"
+END_TAG = "### END {section} ###"
+
+def load_config():
+    if not os.path.exists(CONFIG_FILE):
+        print(f"配置文件 {CONFIG_FILE} 不存在！")
+        sys.exit(1)
+    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+        return f.readlines()
+
+def save_config(lines):
+    with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+        f.writelines(lines)
+
+def find_section(lines, section):
+    start_line = None
+    end_line = None
+    for i, line in enumerate(lines):
+        if START_TAG.format(section=section.upper()) in line:
+            start_line = i
+        if END_TAG.format(section=section.upper()) in line:
+            end_line = i
+    if start_line is None or end_line is None or start_line >= end_line:
+        print(f"无法定位 {section} 区块！")
+        sys.exit(1)
+    return start_line + 1, end_line
+
+def extract_items(lines, start, end):
+    return [line.strip() for line in lines[start:end] if line.strip().startswith('"')]
+
+def format_items(items):
+    items = sorted(set(items), key=lambda x: x.lower())  # ignore case when sorting
+    return [f"  {item}\n" for item in items]
+
+def add_apps(section, apps):
+    lines = load_config()
+    start, end = find_section(lines, section)
+    items = extract_items(lines, start, end)
+    quoted_apps = [f'"{app}"' for app in apps]
+    added = False
+    for qa in quoted_apps:
+        if qa not in items:
+            items.append(qa)
+            print(f"{qa.strip()} 已成功添加到 {section}。")
+            added = True
+        else:
+            print(f"{qa.strip()} 已存在于 {section}，跳过。")
+    if added:
+        formatted = format_items(items)
+        new_lines = lines[:start] + formatted + lines[end:]
+        save_config(new_lines)
+        run_nixfmt()
+
+def delete_app(app):
+    lines = load_config()
+    quoted_app = f'"{app}"'
+    modified = False
+    for section in LISTS.values():
+        start, end = find_section(lines, section)
+        items = extract_items(lines, start, end)
+        if quoted_app in items:
+            items = [i for i in items if i != quoted_app]
+            formatted = format_items(items)
+            lines = lines[:start] + formatted + lines[end:]
+            modified = True
+            print(f"{app} 已从 {section} 中删除。")
+    if modified:
+        save_config(lines)
+        run_nixfmt()
+    else:
+        print(f"{app} 不在任何列表中。")
+
+def run_nixfmt():
+    try:
+        subprocess.run(["nixfmt", CONFIG_FILE], check=True)
+        print("格式化完成：", CONFIG_FILE)
+    except FileNotFoundError:
+        print("⚠️ 未找到 nixfmt，跳过格式化。")
+
+def print_usage():
+    print("使用方法：")
+    print("  添加软件: addapp b|c|f 软件1 软件2 ...")
+    print("  删除软件: addapp del|d 软件名")
+
+def main():
+    if len(sys.argv) < 3:
+        print_usage()
+        return
+    op = sys.argv[1]
+    args = sys.argv[2:]
+    if op in LISTS:
+        add_apps(LISTS[op], args)
+    elif op in ["del", "d"]:
+        for app in args:
+            delete_app(app)
+    else:
+        print_usage()
+
+if __name__ == "__main__":
+    main()
+
