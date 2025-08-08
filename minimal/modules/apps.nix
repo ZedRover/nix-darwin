@@ -26,7 +26,6 @@
     fzf
     git
     git-lfs
-    helix
     htop-vim
     inetutils
     mold
@@ -87,6 +86,7 @@
       "enca"
       "ffmpeg"
       "fnm"
+      "fzf"
       "gh"
       "gitwatch"
       "iperf3"
@@ -104,8 +104,8 @@
       "netcat"
       "open-mpi"
       "rust"
-      "tailscale"
       "ta-lib"
+      "tailscale"
       "telnet"
       "trzsz-ssh"
       ### END BREWS ###
@@ -126,6 +126,7 @@
       "claude"
       "cursor"
       "easydict"
+      "emclient"
       "fliqlo"
       "free-download-manager"
       "hyper"
