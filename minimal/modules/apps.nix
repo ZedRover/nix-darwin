@@ -71,7 +71,6 @@
       "homebrew/command-not-found"
       "homebrew/services"
       "sunnyyoung/repo"
-      # "mrkai77/cask"
     ];
 
     # `brew install`
@@ -86,6 +85,7 @@
       "enca"
       "ffmpeg"
       "fnm"
+      "fontconfig"
       "fzf"
       "gh"
       "gitwatch"
@@ -138,11 +138,11 @@
       "linearmouse"
       "mactex-no-gui"
       "maczip"
-      "marginnote"
       "microsoft-excel"
       "microsoft-powerpoint"
       "microsoft-teams"
       "microsoft-word"
+      "marginnote"
       "miniforge"
       "mos"
       "neteasemusic"
