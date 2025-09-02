@@ -19,7 +19,11 @@
 
     defaults = {
       menuExtraClock.Show24Hour = true; # show 24 hour clock
-
+      CustomUserPreferences = {
+        "com.apple.dock" = {
+          appswitcher-all-displays = true;
+        };
+      };
       # other macOS's defaults configuration.
       # ......
     };
