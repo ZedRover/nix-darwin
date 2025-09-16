@@ -1,6 +1,8 @@
 { pkgs, ... }: {
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.auto-optimise-store = true;
+
   nix.enable = false;
   # Auto upgrade nix package and the daemon service.
   # services.nix-daemon.enable = true;

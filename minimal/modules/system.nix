@@ -11,7 +11,7 @@
 
   system = {
     primaryUser = "zed";
-    stateVersion = 5;
+    stateVersion = 6;
 
     defaults = {
       menuExtraClock.Show24Hour = true; # show 24 hour clock
