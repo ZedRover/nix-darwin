@@ -28,7 +28,6 @@
     git-lfs
     htop-vim
     inetutils
-    mold
     ninja
     nix-du
     nixpkgs-fmt

@@ -18,4 +18,4 @@ deploy:
         --extra-experimental-features 'nix-command flakes'
 
     echo "🚀 Switching system configuration..."
-    ./result/sw/bin/darwin-rebuild switch --flake .#zeds
+    sudo ./result/sw/bin/darwin-rebuild switch --flake .#zeds
