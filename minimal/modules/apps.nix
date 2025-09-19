@@ -60,6 +60,7 @@
 
     onActivation = {
       autoUpdate = true;
+      upgrade = true;
       cleanup = "zap";
     };
 
@@ -129,7 +130,6 @@
       "emclient"
       "fliqlo"
       "free-download-manager"
-      # "hyper"
       "ghostty"
       "iina"
       "input-source-pro"
@@ -174,7 +174,6 @@
       "visual-studio-code"
       "vnc-viewer"
       "wechat"
-      "wechattweak-cli"
       "wechatwork"
       "wetype"
       "youku"
