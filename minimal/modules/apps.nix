@@ -67,9 +67,6 @@
     taps = [
       "beeftornado/rmtree"
       "buo/cask-upgrade"
-      "homebrew/bundle"
-      "homebrew/command-not-found"
-      "homebrew/services"
       "sunnyyoung/repo"
     ];
 
@@ -78,7 +75,6 @@
       ### START BREWS ###
       "aria2"
       "asitop"
-      "brew-cask-completion"
       "clang-format"
       "coreutils"
       "duf"
@@ -100,7 +96,7 @@
       "macvim"
       "mosh"
       "ncdu"
-      "neofetch"
+      "fastfetch"
       "netcat"
       "open-mpi"
       "rust"
