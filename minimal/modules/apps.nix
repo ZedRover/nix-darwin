@@ -93,7 +93,7 @@
       "libomp"
       "maclaunch"
       "macos-trash"
-      "macvim"
+      "neovim"
       "mosh"
       "ncdu"
       "fastfetch"
