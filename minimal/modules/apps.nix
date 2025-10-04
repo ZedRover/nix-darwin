@@ -151,6 +151,7 @@
       "parallels-client"
       "pictureview"
       "prettyclean"
+      "qbittorrent@lt20"
       "qlcolorcode"
       "qlmarkdown"
       "qlstephen"
@@ -212,6 +213,7 @@
       "font-maple-mono-nf"
       "font-maple-mono-cn"
       "font-maple-mono-nf-cn"
+      "font-share-tech-mono"
       ### END FONTS ###
     ];
   };
