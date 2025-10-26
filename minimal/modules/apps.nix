@@ -124,7 +124,6 @@
       "cursor"
       "droid"
       "easydict"
-      "emclient"
       "fliqlo"
       "free-download-manager"
       "ghostty"
