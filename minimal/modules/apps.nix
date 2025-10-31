@@ -68,6 +68,7 @@
       "beeftornado/rmtree"
       "buo/cask-upgrade"
       "sunnyyoung/repo"
+      "amir1376/tap"
     ];
 
     # `brew install`
@@ -112,6 +113,7 @@
       ### START CASKS ###
       "1password"
       "1password-cli"
+      "ab-download-manager"
       "adrive"
       "aldente"
       "baidunetdisk"
@@ -120,12 +122,12 @@
       "betterdisplay"
       "bettertouchtool"
       "chatgpt"
+      "chatgpt-atlas"
       "claude"
       "cursor"
       "droid"
       "easydict"
       "fliqlo"
-      "free-download-manager"
       "ghostty"
       "iina"
       "input-source-pro"
