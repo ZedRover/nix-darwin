@@ -22,6 +22,7 @@
     cmake
     comma
     eza
+    fd
     fswatch
     fzf
     git
