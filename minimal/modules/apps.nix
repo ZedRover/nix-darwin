@@ -68,7 +68,6 @@
     taps = [
       "beeftornado/rmtree"
       "buo/cask-upgrade"
-      "sunnyyoung/repo"
       "amir1376/tap"
     ];
 
@@ -79,6 +78,7 @@
       "asitop"
       "clang-format"
       "coreutils"
+      "claude-squad"
       "duf"
       "enca"
       "fastfetch"
@@ -153,15 +153,13 @@
       "parallels-client"
       "pictureview"
       "prettyclean"
-      "qbittorrent@lt20"
       "qq"
       "qqmusic"
       "rustdesk"
-      "sioyek"
       "skim"
       "snipaste"
       "telegram"
-      "temurin@21"
+      #"temurin@21"
       "tencent-lemon"
       "tencent-meeting"
       "termius"
