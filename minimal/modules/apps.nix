@@ -55,6 +55,9 @@
     HOMEBREW_BREW_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git";
     HOMEBREW_CORE_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git";
     HOMEBREW_PIP_INDEX_URL = "https://pypi.tuna.tsinghua.edu.cn/simple";
+    http_proxy = "http://127.0.0.1:6152";
+    https_proxy = "http://127.0.0.1:6152";
+    all_proxy = "socks5://127.0.0.1:6153";
   };
   homebrew = {
     enable = true;
@@ -117,6 +120,7 @@
       "ab-download-manager"
       "adrive"
       "aldente"
+      "diffusionbee"
       "antigravity"
       "baidunetdisk"
       "balenaetcher"
@@ -158,8 +162,8 @@
       "rustdesk"
       "skim"
       "snipaste"
-      "sunlogincontrol"
       "telegram"
+      "awesun"
       #"temurin@21"
       "tencent-lemon"
       "tencent-meeting"
