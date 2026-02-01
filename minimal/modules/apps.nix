@@ -82,6 +82,7 @@
       "clang-format"
       "coreutils"
       "claude-squad"
+      "chsrc"
       "duf"
       "enca"
       "fastfetch"
@@ -115,12 +116,12 @@
 
     casks = [
       ### START CASKS ###
+      "qbittorrent@lt20"
       "1password"
       "1password-cli"
       "ab-download-manager"
       "adrive"
       "aldente"
-      "diffusionbee"
       "antigravity"
       "baidunetdisk"
       "balenaetcher"
@@ -129,6 +130,7 @@
       "chatgpt"
       "chatgpt-atlas"
       "claude"
+      "claude-code"
       "cursor"
       "droid"
       "easydict"
