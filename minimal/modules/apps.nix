@@ -175,7 +175,6 @@
       "visual-studio-code"
       "vnc-viewer"
       "wechat"
-      "wechatwork"
       "wetype"
       "wins"
       "youku"
