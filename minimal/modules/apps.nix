@@ -108,6 +108,7 @@
       "open-mpi"
       "pixi"
       "rust"
+      "socat"
       "ta-lib"
       "telnet"
       "trzsz-ssh"
