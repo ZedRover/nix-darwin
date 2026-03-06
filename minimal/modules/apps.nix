@@ -138,7 +138,6 @@
       "easydict"
       "fliqlo"
       "ghostty"
-      "gcloud-cli"
       "iina"
       "input-source-pro"
       "itsycal"
