@@ -132,7 +132,6 @@
       "claude"
       "claude-code"
       "codex-app"
-      "cursor"
       "droid"
       "easydict"
       "fliqlo"
