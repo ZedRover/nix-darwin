@@ -79,6 +79,7 @@
       ### START BREWS ###
       "aria2"
       "asitop"
+      "bitwarden-cli"
       "clang-format"
       "coreutils"
       "claude-squad"
