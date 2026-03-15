@@ -143,6 +143,7 @@
       "itsycal"
       "latest"
       "linearmouse"
+      "logi-options+"
       "mactex-no-gui"
       "maczip"
       "marginnote"

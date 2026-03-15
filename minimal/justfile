@@ -14,8 +14,9 @@ deploy:
     # nix flake update
 
     echo "🔨 Building system..."
-    nix build .#darwinConfigurations.zeds.system \
-        --extra-experimental-features 'nix-command flakes'
+    sudo darwin-rebuild switch --flake .#zeds
+    # nix build .#darwinConfigurations.zeds.system \
+    #    --extra-experimental-features 'nix-command flakes'
 
-    echo "🚀 Switching system configuration..."
-    sudo ./result/sw/bin/darwin-rebuild switch --flake .#zeds
+    #echo "🚀 Switching system configuration..."
+    #sudo ./result/sw/bin/darwin-rebuild switch --flake .#zeds
