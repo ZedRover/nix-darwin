@@ -61,7 +61,7 @@
   };
   homebrew = {
     enable = true;
-    enableZshIntegration = true;
+    # enableZshIntegration = true;
 
     onActivation = {
       autoUpdate = true;
@@ -173,7 +173,6 @@
       "tencent-meeting"
       "termius"
       "trunk-io"
-      "uuremote"
       "visual-studio-code"
       "vnc-viewer"
       "wechat"
