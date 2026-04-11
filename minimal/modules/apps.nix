@@ -124,8 +124,6 @@
     casks = [
       ### START CASKS ###
       "qbittorrent@lt20"
-      "1password"
-      "1password-cli"
       "ab-download-manager"
       "adrive"
       "aldente"
