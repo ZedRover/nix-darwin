@@ -160,6 +160,7 @@
       "notchnook"
       "obsidian"
       "omnidisksweeper"
+      "omnissa-horizon-client"
       "onedrive"
       "orbstack"
       "parallels-client"
