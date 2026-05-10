@@ -185,6 +185,7 @@
       "youku"
       "zoom"
       "zotero@beta"
+      "zed"
       ### END CASKS ###
 
       ### START FONTS ###
