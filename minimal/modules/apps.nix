@@ -179,7 +179,6 @@
       "visual-studio-code"
       "vnc-viewer"
       "wechat"
-      "wetype"
       "wins"
       "youku"
       "zoom"
