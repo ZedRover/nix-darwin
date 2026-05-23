@@ -128,6 +128,7 @@
       "ab-download-manager"
       "adrive"
       "aldente"
+      "antigravity-cli"
       "baidunetdisk"
       "balenaetcher"
       "bartender"
