@@ -145,7 +145,6 @@
       "parallels-client"
       "pictureview"
       "prettyclean"
-      "qbittorrent@lt20"
       "qq"
       "qqmusic"
       "rustdesk"
