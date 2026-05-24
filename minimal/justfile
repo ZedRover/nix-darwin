@@ -1,22 +1,15 @@
-# 设置默认 shell
 set shell := ["bash", "-cu"]
 
-# 可选：默认任务
-default:
-    just deploy
+default: deploy
 
-# 更新 flake & rebuild 系统
+# 构建并切换系统配置
 deploy:
-    # 可选：释放 nix store 空间
-    # nix store gc
-
-    # echo "🔄 Updating flake..."
-    # nix flake update
-
-    echo "🔨 Building system..."
     sudo darwin-rebuild switch --flake .#zeds
-    # nix build .#darwinConfigurations.zeds.system \
-    #    --extra-experimental-features 'nix-command flakes'
 
-    #echo "🚀 Switching system configuration..."
-    #sudo ./result/sw/bin/darwin-rebuild switch --flake .#zeds
+# 更新 flake 输入到最新
+update:
+    nix flake update
+
+# 清理 nix store
+gc:
+    nix store gc

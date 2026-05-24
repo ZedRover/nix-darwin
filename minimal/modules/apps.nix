@@ -4,18 +4,13 @@
   #
   #  Install all apps and packages here.
   #
-  #  NOTE: Your can find all available options in:
+  #  NOTE: All available options:
   #    https://daiderd.com/nix-darwin/manual/index.html
-  #
   #
   ##########################################################################
 
-  # Install packages from nix's official package repository.
-  #
-  # The packages installed here are available to all users, and are reproducible across machines, and are rollbackable.
-  # But on macOS, it's less stable than homebrew.
-  # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
+    ### START Nix ###
     axel
     bat
     bazel
@@ -31,7 +26,6 @@
     inetutils
     ninja
     nix-du
-    nixpkgs-fmt
     nixfmt-rfc-style
     openssh
     pandoc
@@ -49,22 +43,9 @@
     zellij
     ### END Nix ###
   ];
-  environment.variables = {
-    # HOMEBREW_API_DOMAIN = "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api";
-    # HOMEBREW_BOTTLE_DOMAIN = "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles";
-    # HOMEBREW_BREW_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git";
-    # HOMEBREW_CORE_GIT_REMOTE = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git";
-    # HOMEBREW_PIP_INDEX_URL = "https://pypi.tuna.tsinghua.edu.cn/simple";
-    http_proxy  = "http://127.0.0.1:7890";
-    https_proxy = "http://127.0.0.1:7890";
-    all_proxy   = "socks5://127.0.0.1:7891";
-    HTTP_PROXY  = "http://127.0.0.1:7890";
-    HTTPS_PROXY = "http://127.0.0.1:7890";
-    ALL_PROXY   = "socks5://127.0.0.1:7891";
-  };
+
   homebrew = {
     enable = true;
-    # enableZshIntegration = true;
 
     onActivation = {
       autoUpdate = true;
@@ -78,7 +59,6 @@
       "amir1376/tap"
     ];
 
-    # `brew install`
     brews = [
       ### START BREWS ###
       "aria2"

@@ -2,4 +2,6 @@ result
 result/
 history
 history/
-**/.Ds_Store
+**/.DS_Store
+**/*.swp
+**/*.bak

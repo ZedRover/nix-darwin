@@ -3,7 +3,7 @@
     "darwin": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-darwin"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -162,6 +162,26 @@
         "url": "https://flakehub.com/f/DeterminateSystems/nix-src/%2A"
       }
     },
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778999127,
+        "narHash": "sha256-V5GquqJvAqwFTcpN6hxKSQAtwuJFRUEHmyNKbeaTQDg=",
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "rev": "f680e0d3c1dbefe298c423691662e238496890f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1773222311,
@@ -189,22 +209,6 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "a62e6edd6d5e1fa0329b8653c801147986f8d446",
-        "type": "github"
-      }
-    },
-    "nixpkgs-darwin": {
-      "locked": {
-        "lastModified": 1773443291,
-        "narHash": "sha256-Stmn8PuqTS0elONjnme1yigK2TJqjdg6LXcgwZwqH64=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "40c50ee301a50280389c4673f021fc24e639f141",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-25.11-darwin",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -240,24 +244,26 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1773507054,
-        "narHash": "sha256-Q8U5VXgrcxmCxPtCCJCIZkcAX3FCZwGh1GNVIXxMND0=",
-        "owner": "NixOS",
+        "lastModified": 1779495359,
+        "narHash": "sha256-KZ/9A3gvlKboDm2Kbv4A6KnfA9wMSfebyoEU91HeBn8=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e80236013dc8b77aa49ca90e7a12d86f5d8d64c9",
+        "rev": "2b76bb8a3c79707f0d0903e486da6d9851654c3c",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "nixos",
+        "ref": "nixpkgs-25.11-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "root": {
       "inputs": {
         "darwin": "darwin",
         "determinate": "determinate",
-        "nixpkgs": "nixpkgs_3",
-        "nixpkgs-darwin": "nixpkgs-darwin"
+        "nix-index-database": "nix-index-database",
+        "nixpkgs": "nixpkgs_3"
       }
     }
   },
