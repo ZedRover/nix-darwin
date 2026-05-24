@@ -84,11 +84,11 @@
       "aria2"
       "asitop"
       "bitwarden-cli"
+      "chsrc"
       "clang-format"
-      "coreutils"
       "claude-squad"
       "cloudflared"
-      "chsrc"
+      "coreutils"
       "duf"
       "duti"
       "enca"
@@ -125,7 +125,6 @@
 
     casks = [
       ### START CASKS ###
-      "qbittorrent@lt20"
       "ab-download-manager"
       "adrive"
       "aldente"
@@ -167,6 +166,7 @@
       "parallels-client"
       "pictureview"
       "prettyclean"
+      "qbittorrent@lt20"
       "qq"
       "qqmusic"
       "rustdesk"
@@ -183,9 +183,9 @@
       "wechat"
       "wins"
       "youku"
+      "zed"
       "zoom"
       "zotero@beta"
-      "zed"
       ### END CASKS ###
 
       ### START FONTS ###

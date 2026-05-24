@@ -31,6 +31,7 @@
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
     # nur.url = "github:nix-community/NUR";
   };
 
@@ -43,12 +44,14 @@
     inputs @ { self
     , nixpkgs
     , darwin
+    , determinate
     , ...
     }: {
       darwinConfigurations.zeds = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           # nur.nixosModules.nur
+          determinate.darwinModules.default
           ./modules/nix-core.nix
           ./modules/system.nix
           ./modules/apps.nix
