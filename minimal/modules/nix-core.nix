@@ -18,6 +18,9 @@
 
   nixpkgs.config.allowUnfree = true;
   programs.nix-index.enable = true;
+  # 把 comma 也指向 nix-index-database 的预构建数据库
+  # (替代 environment.systemPackages 里的 comma)
+  programs.nix-index-database.comma.enable = true;
 
   # 代理说明:
   # 原先写在这里的 launchd.daemons.nix-daemon 代理变量从来没生效过 —

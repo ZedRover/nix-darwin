@@ -15,7 +15,6 @@
     bat
     bazel
     cmake
-    comma
     eza
     fd
     fswatch
