@@ -95,6 +95,7 @@
       "fastfetch"
       "ffmpeg"
       "fontconfig"
+      "forgecode"
       "fzf"
       "gh"
       "gitwatch"
