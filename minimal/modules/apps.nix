@@ -50,12 +50,13 @@
       autoUpdate = true;
       upgrade = true;
       cleanup = "zap";
+      extraFlags = [ "--force-cleanup" ];
     };
 
     taps = [
       "beeftornado/rmtree"
       "buo/cask-upgrade"
-      "amir1376/tap"
+      #"amir1376/tap"
     ];
 
     brews = [
@@ -104,7 +105,7 @@
 
     casks = [
       ### START CASKS ###
-      "ab-download-manager"
+      #"ab-download-manager"
       "adrive"
       "aldente"
       "antigravity-cli"
