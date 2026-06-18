@@ -100,6 +100,7 @@
       "ta-lib"
       "telnet"
       "trzsz-ssh"
+      "wakeonlan"
       ### END BREWS ###
     ];
 
