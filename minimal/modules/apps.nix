@@ -25,7 +25,7 @@
     inetutils
     ninja
     nix-du
-    nixfmt-rfc-style
+    nixfmt
     openssh
     pandoc
     parallel
