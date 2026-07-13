@@ -1,0 +1,152 @@
+name: Deploy Notification
+
+on:
+  workflow_run:
+    workflows: ["CI/CD Pipeline"]
+    types:
+      - completed
+    branches: [main]
+
+jobs:
+  deploy-notification:
+    name: Deployment Instructions
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create deployment instructions
+        run: |
+          cat << 'EOF' > deployment-instructions.md
+          # 🚀 Deployment Instructions
+
+          Your nix-darwin configuration has passed all validation checks!
+
+          ## Local Deployment Steps
+
+          ### For Minimal Configuration:
+          ```bash
+          # Clone the repository (if not already done)
+          git clone https://github.com/${{ github.repository }}.git
+          cd nix-darwin-kickstarter
+
+          # Pull latest changes
+          git pull origin main
+
+          # Deploy minimal configuration
+          cd minimal
+
+          # First time setup (if nix-darwin not installed)
+          nix run nix-darwin -- switch --flake .#zeds
+
+          # Regular updates
+          darwin-rebuild switch --flake .#zeds
+          ```
+
+          ### For Rich Demo Configuration:
+          ```bash
+          # ⚠️  WARNING: Rich demo may overwrite system settings
+          # Update hostname and username in flake.nix first
+          cd rich-demo
+
+          # Update configuration
+          vim flake.nix  # Change hostname and yourusername
+
+          # Deploy
+          darwin-rebuild switch --flake .#your-hostname
+          ```
+
+          ## Verification Commands
+
+          After deployment, verify your setup:
+          ```bash
+          # Check nix-darwin status
+          darwin-rebuild check
+
+          # Verify installed packages
+          nix-env --query --installed
+
+          # Check system configuration
+          system_profiler SPSoftwareDataType
+          ```
+
+          ## Rollback Instructions
+
+          If something goes wrong:
+          ```bash
+          # List available generations
+          sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+
+          # Rollback to previous generation
+          sudo nix-env --rollback --profile /nix/var/nix/profiles/system
+
+          # Or rollback to specific generation
+          sudo nix-env --switch-generation <generation-number> --profile /nix/var/nix/profiles/system
+          ```
+
+          ## Troubleshooting
+
+          Common issues and solutions:
+          - **Build errors**: Check flake.lock for version conflicts
+          - **Permission issues**: Ensure proper file permissions with `sudo chown -R $(whoami) /nix`
+          - **Cache issues**: Clear cache with `nix-collect-garbage -d`
+
+          ---
+          Build completed at: $(date)
+          Commit: ${{ github.sha }}
+          EOF
+
+      - name: Display deployment instructions
+        run: cat deployment-instructions.md
+
+      - name: Create deployment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment-instructions
+          path: deployment-instructions.md
+          retention-days: 30
+
+      - name: Post deployment comment (for PRs)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const fs = require('fs');
+            const instructions = fs.readFileSync('deployment-instructions.md', 'utf8');
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🎉 Configuration Validated Successfully!\n\n${instructions}`
+            });
+
+  update-readme-badge:
+    name: Update README Badge
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update README with badges
+        run: |
+          # Create badges section if it doesn't exist
+          if ! grep -q "## Status" README.md; then
+            sed -i '2i\\n## Status\n\n[![CI/CD Pipeline](https://github.com/${{ github.repository }}/actions/workflows/ci.yml/badge.svg)](https://github.com/${{ github.repository }}/actions/workflows/ci.yml)\n[![Security Scan](https://github.com/${{ github.repository }}/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/${{ github.repository }}/actions)\n' README.md
+          fi
+
+      - name: Commit badge updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "docs: update CI/CD badges [skip ci]"
+            git push
+          fi
