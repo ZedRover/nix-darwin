@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 
-import sys
 import os
 import re
 import subprocess
+import sys
 
-CONFIG_FILE = os.path.expanduser("~/tools/nix-world/nix-darwin-kickstarter/minimal/modules/apps.nix")
+CONFIG_FILE = os.environ.get(
+    "APC_CONFIG_FILE",
+    os.path.expanduser(
+        "~/tools/nix-world/nix-darwin-kickstarter/minimal/modules/apps.nix"
+    ),
+)
 
 LISTS = {
     "b": "brews",
@@ -15,6 +20,8 @@ LISTS = {
 
 START_TAG = "### START {section} ###"
 END_TAG = "### END {section} ###"
+ITEM_PATTERN = re.compile(r'^\s*(?P<commented>#?)\s*"(?P<name>[^"]+)"\s*$')
+
 
 def load_config():
     if not os.path.exists(CONFIG_FILE):
@@ -23,9 +30,11 @@ def load_config():
     with open(CONFIG_FILE, "r", encoding="utf-8") as f:
         return f.readlines()
 
+
 def save_config(lines):
     with open(CONFIG_FILE, "w", encoding="utf-8") as f:
         f.writelines(lines)
+
 
 def find_section(lines, section):
     start_line = None
@@ -40,62 +49,101 @@ def find_section(lines, section):
         sys.exit(1)
     return start_line + 1, end_line
 
+
 def extract_items(lines, start, end):
-    return [line.strip() for line in lines[start:end] if line.strip().startswith('"')]
+    items = []
+    for line in lines[start:end]:
+        if not line.strip():
+            continue
+        match = ITEM_PATTERN.match(line)
+        if not match:
+            print(f"无法识别 {line.strip()}，请检查配置区块！")
+            sys.exit(1)
+        items.append(
+            {
+                "name": match.group("name"),
+                "commented": bool(match.group("commented")),
+            }
+        )
+    return items
+
 
 def format_items(items):
-    items = sorted(set(items), key=lambda x: x.lower())  # ignore case when sorting
-    return [f"  {item}\n" for item in items]
+    sorted_items = sorted(items, key=lambda item: item["name"].casefold())
+    return [
+        f'  {"#" if item["commented"] else ""}"{item["name"]}"\n'
+        for item in sorted_items
+    ]
 
-def add_apps(section, apps):
-    lines = load_config()
-    start, end = find_section(lines, section)
-    items = extract_items(lines, start, end)
-    quoted_apps = [f'"{app}"' for app in apps]
-    added = False
-    for qa in quoted_apps:
-        if qa not in items:
-            items.append(qa)
-            print(f"{qa.strip()} 已成功添加到 {section}。")
-            added = True
-        else:
-            print(f"{qa.strip()} 已存在于 {section}，跳过。")
-    if added:
-        formatted = format_items(items)
-        new_lines = lines[:start] + formatted + lines[end:]
-        save_config(new_lines)
-        run_nixfmt()
 
-def delete_app(app):
-    lines = load_config()
-    quoted_app = f'"{app}"'
-    modified = False
+def sort_all_sections(lines):
     for section in LISTS.values():
         start, end = find_section(lines, section)
         items = extract_items(lines, start, end)
-        if quoted_app in items:
-            items = [i for i in items if i != quoted_app]
-            formatted = format_items(items)
-            lines = lines[:start] + formatted + lines[end:]
-            modified = True
-            print(f"{app} 已从 {section} 中删除。")
-    if modified:
+        lines = lines[:start] + format_items(items) + lines[end:]
+    return lines
+
+
+def add_apps(section, apps):
+    original_lines = load_config()
+    lines = original_lines
+    start, end = find_section(lines, section)
+    items = extract_items(lines, start, end)
+
+    for app in apps:
+        existing = next((item for item in items if item["name"] == app), None)
+        if existing is None:
+            items.append({"name": app, "commented": False})
+            print(f'"{app}" 已成功添加到 {section}。')
+        elif existing["commented"]:
+            existing["commented"] = False
+            print(f'"{app}" 已在 {section} 中启用。')
+        else:
+            print(f'"{app}" 已存在于 {section}，跳过。')
+
+    lines = lines[:start] + format_items(items) + lines[end:]
+    lines = sort_all_sections(lines)
+    if lines != original_lines:
         save_config(lines)
         run_nixfmt()
-    else:
-        print(f"{app} 不在任何列表中。")
+
+
+def delete_apps(apps):
+    original_lines = load_config()
+    lines = original_lines
+
+    for app in apps:
+        found = False
+        for section in LISTS.values():
+            start, end = find_section(lines, section)
+            items = extract_items(lines, start, end)
+            remaining_items = [item for item in items if item["name"] != app]
+            if len(remaining_items) != len(items):
+                lines = lines[:start] + format_items(remaining_items) + lines[end:]
+                print(f"{app} 已从 {section} 中删除。")
+                found = True
+        if not found:
+            print(f"{app} 不在任何列表中。")
+
+    lines = sort_all_sections(lines)
+    if lines != original_lines:
+        save_config(lines)
+        run_nixfmt()
+
 
 def run_nixfmt():
     try:
         subprocess.run(["nixfmt", CONFIG_FILE], check=True)
         print("格式化完成：", CONFIG_FILE)
     except FileNotFoundError:
-        print("⚠️ 未找到 nixfmt，跳过格式化。")
+        print("未找到 nixfmt，跳过格式化。")
+
 
 def print_usage():
     print("使用方法：")
-    print("  添加软件: addapp b|c|f 软件1 软件2 ...")
-    print("  删除软件: addapp del|d 软件名")
+    print("  添加软件: apc b|c|f 软件1 软件2 ...")
+    print("  删除软件: apc del|d 软件1 软件2 ...")
+
 
 def main():
     if len(sys.argv) < 3:
@@ -106,11 +154,10 @@ def main():
     if op in LISTS:
         add_apps(LISTS[op], args)
     elif op in ["del", "d"]:
-        for app in args:
-            delete_app(app)
+        delete_apps(args)
     else:
         print_usage()
 
+
 if __name__ == "__main__":
     main()
-

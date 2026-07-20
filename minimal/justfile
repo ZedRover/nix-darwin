@@ -2,9 +2,66 @@ set shell := ["bash", "-cu"]
 
 default: deploy
 
+# 在构建前为 Determinate Nix daemon 注入代理；配置未变化时不会重启。
+proxy-daemon:
+    #!/bin/bash
+    set -euo pipefail
+
+    daemon_plist=/Library/LaunchDaemons/systems.determinate.nix-daemon.plist
+    if [[ ! -f "$daemon_plist" ]]; then
+        echo >&2 "error: Determinate Nix daemon plist not found: $daemon_plist"
+        exit 1
+    fi
+
+    daemon_proxy_backup=$(mktemp "${TMPDIR:-/tmp}/determinate-nix-daemon.plist.XXXXXX")
+    trap 'rm -f "$daemon_proxy_backup"' EXIT
+    sudo cp "$daemon_plist" "$daemon_proxy_backup"
+    daemon_proxy_changed=0
+
+    if ! sudo /usr/libexec/PlistBuddy -c "Print :EnvironmentVariables" "$daemon_plist" >/dev/null 2>&1; then
+        sudo /usr/libexec/PlistBuddy -c "Add :EnvironmentVariables dict" "$daemon_plist"
+        daemon_proxy_changed=1
+    fi
+
+    proxy_entries=(
+        "http_proxy=http://127.0.0.1:6152"
+        "https_proxy=http://127.0.0.1:6152"
+        "all_proxy=socks5://127.0.0.1:6153"
+        "no_proxy=localhost,127.0.0.1,::1"
+    )
+
+    for entry in "${proxy_entries[@]}"; do
+        name=${entry%%=*}
+        value=${entry#*=}
+        current_value=$(sudo /usr/libexec/PlistBuddy -c "Print :EnvironmentVariables:$name" "$daemon_plist" 2>/dev/null || true)
+        if [[ "$current_value" != "$value" ]]; then
+            sudo /usr/libexec/PlistBuddy -c "Delete :EnvironmentVariables:$name" "$daemon_plist" 2>/dev/null || true
+            sudo /usr/libexec/PlistBuddy -c "Add :EnvironmentVariables:$name string $value" "$daemon_plist"
+            daemon_proxy_changed=1
+        fi
+    done
+
+    if [[ "$daemon_proxy_changed" -eq 1 ]]; then
+        if ! sudo /usr/bin/plutil -lint "$daemon_plist" >/dev/null; then
+            sudo cp "$daemon_proxy_backup" "$daemon_plist"
+            echo >&2 "error: failed to write a valid Determinate Nix daemon plist"
+            exit 1
+        fi
+
+        sudo /bin/launchctl bootout system "$daemon_plist" 2>/dev/null || true
+        if ! sudo /bin/launchctl bootstrap system "$daemon_plist"; then
+            sudo cp "$daemon_proxy_backup" "$daemon_plist"
+            sudo /bin/launchctl bootstrap system "$daemon_plist" 2>/dev/null || true
+            echo >&2 "error: failed to reload the Determinate Nix daemon with proxy settings"
+            exit 1
+        fi
+        sudo /bin/launchctl kickstart -k system/systems.determinate.nix-daemon
+        echo >&2 "Determinate Nix daemon proxy updated."
+    fi
+
 # 构建并切换系统配置
-deploy:
-    sudo darwin-rebuild switch --flake .#zeds
+deploy: proxy-daemon
+    HTTP_PROXY=http://127.0.0.1:6152 HTTPS_PROXY=http://127.0.0.1:6152 ALL_PROXY=socks5://127.0.0.1:6153 NO_PROXY=localhost,127.0.0.1,::1 http_proxy=http://127.0.0.1:6152 https_proxy=http://127.0.0.1:6152 all_proxy=socks5://127.0.0.1:6153 no_proxy=localhost,127.0.0.1,::1 sudo --preserve-env=HTTP_PROXY,HTTPS_PROXY,ALL_PROXY,NO_PROXY,http_proxy,https_proxy,all_proxy,no_proxy darwin-rebuild switch --flake .#zeds
 
 # 更新 flake 输入到最新
 update:
