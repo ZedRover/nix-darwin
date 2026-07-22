@@ -60,8 +60,9 @@ proxy-daemon:
     fi
 
 # 构建并切换系统配置
+# Nix 走 daemon 代理（proxy-daemon）；Homebrew 走 homebrew.onActivation.extraEnv。
 deploy: proxy-daemon
-    HTTP_PROXY=http://127.0.0.1:6152 HTTPS_PROXY=http://127.0.0.1:6152 ALL_PROXY=socks5://127.0.0.1:6153 NO_PROXY=localhost,127.0.0.1,::1 http_proxy=http://127.0.0.1:6152 https_proxy=http://127.0.0.1:6152 all_proxy=socks5://127.0.0.1:6153 no_proxy=localhost,127.0.0.1,::1 sudo --preserve-env=HTTP_PROXY,HTTPS_PROXY,ALL_PROXY,NO_PROXY,http_proxy,https_proxy,all_proxy,no_proxy darwin-rebuild switch --flake .#zeds
+    sudo darwin-rebuild switch --flake .#zeds
 
 # 更新 flake 输入到最新
 update:

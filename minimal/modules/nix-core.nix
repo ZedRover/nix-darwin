@@ -61,14 +61,11 @@ in
   # (替代 environment.systemPackages 里的 comma)
   programs.nix-index-database.comma.enable = true;
 
-  # Used by interactive shells and commands such as curl, git, and Homebrew.
+  # Interactive shells (via set-environment): curl, git, manual brew, etc.
   environment.variables = proxyVariables;
 
-  # darwin-rebuild runs as root and the Homebrew activation runs through a
-  # second sudo invocation as the primary user. Preserve proxies across both.
-  security.sudo.extraConfig = ''
-    Defaults env_keep += "http_proxy https_proxy all_proxy no_proxy HTTP_PROXY HTTPS_PROXY ALL_PROXY NO_PROXY"
-  '';
+  # activate uses `env -i`; inject proxy into the brew invocation directly.
+  homebrew.onActivation.extraEnv = proxyVariables;
 
   # Determinate Nix owns this LaunchDaemon, so nix-darwin's nix-daemon module
   # cannot set its environment. Re-apply the scoped proxy environment whenever

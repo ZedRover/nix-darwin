@@ -45,17 +45,23 @@
 
   homebrew = {
     enable = true;
+    enableZshIntegration = true;
 
     onActivation = {
-      autoUpdate = true;
+      autoUpdate = false;
       upgrade = true;
       cleanup = "zap";
-      extraFlags = [ "--force-cleanup" ];
     };
 
     taps = [
-      "beeftornado/rmtree"
-      "buo/cask-upgrade"
+      {
+        name = "beeftornado/rmtree";
+        trusted = true;
+      }
+      {
+        name = "buo/cask-upgrade";
+        trusted = true;
+      }
       #"amir1376/tap"
     ];
 
@@ -98,7 +104,6 @@
       "pixi"
       "socat"
       "ta-lib"
-      "tailscale"
       "telnet"
       "trzsz-ssh"
       "wakeonlan"
@@ -123,6 +128,7 @@
       "easydict"
       "fliqlo"
       "ghostty"
+      "grok-build"
       "iina"
       "input-source-pro"
       "itsycal"
@@ -151,6 +157,7 @@
       "rustdesk"
       "skim"
       "snipaste"
+      "tailscale-app"
       "telegram"
       #"temurin@21"
       "tencent-lemon"
