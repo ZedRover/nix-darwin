@@ -165,7 +165,7 @@
       "termius"
       "trunk-io"
       "visual-studio-code"
-      "vnc-viewer"
+      "realvnc-connect-viewer"
       "wechat"
       "wins"
       "youku"
