@@ -72,7 +72,6 @@
       "bitwarden-cli"
       "chsrc"
       "clang-format"
-      "claude-squad"
       "cloudflared"
       "coreutils"
       "duf"
@@ -112,6 +111,7 @@
 
     casks = [
       ### START CASKS ###
+      "1password"
       #"ab-download-manager"
       "adrive"
       "aldente"
@@ -128,6 +128,7 @@
       "ghostty"
       "grok-build"
       "iina"
+      "imazing"
       "input-source-pro"
       "itsycal"
       "linearmouse"
@@ -152,6 +153,7 @@
       "prettyclean"
       "qq"
       "qqmusic"
+      "realvnc-connect-viewer"
       "rustdesk"
       "skim"
       "snipaste"
@@ -163,7 +165,6 @@
       "termius"
       "trunk-io"
       "visual-studio-code"
-      "realvnc-connect-viewer"
       "wechat"
       "wins"
       "youku"
