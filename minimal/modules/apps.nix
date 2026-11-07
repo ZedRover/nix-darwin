@@ -175,6 +175,7 @@
 
       ### START FONTS ###
       "font-0xproto"
+      "font-nordwand-mono"
       "font-azeret-mono"
       "font-cascadia-code"
       "font-cascadia-code-nf"
